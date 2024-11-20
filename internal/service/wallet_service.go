@@ -8,6 +8,12 @@ import (
 	"github.com/google/uuid"
 )
 
+type WalletServiceInterface interface {
+	Deposit(ctx context.Context, walletID uuid.UUID, amount int64) error
+	Withdraw(ctx context.Context, walletID uuid.UUID, amount int64) error
+	GetBalance(ctx context.Context, walletID uuid.UUID) (int64, error)
+}
+
 type WalletService struct {
 	repo repository.WalletRepositoryInterface
 }
@@ -33,3 +39,8 @@ func (s *WalletService) Withdraw(ctx context.Context, walletID uuid.UUID, amount
 func (s *WalletService) GetBalance(ctx context.Context, walletID uuid.UUID) (int64, error) {
 	return s.repo.GetBalance(ctx, walletID)
 }
+
+var (
+	ErrInsufficientFunds = errors.New("insufficient funds")
+	ErrWalletNotFound    = errors.New("wallet not found")
+)

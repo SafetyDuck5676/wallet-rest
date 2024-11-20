@@ -10,16 +10,16 @@ import (
 )
 
 type WalletHandler struct {
-	service *service.WalletService
+	service service.WalletServiceInterface
 }
 
-func NewWalletHandler(service *service.WalletService) *WalletHandler {
+func NewWalletHandler(service service.WalletServiceInterface) *WalletHandler {
 	return &WalletHandler{service: service}
 }
 
 type WalletOperationRequest struct {
-	WalletID      uuid.UUID `json:"walletId"`
-	OperationType string    `json:"operationType"`
+	WalletID      uuid.UUID `json:"walletId" `
+	OperationType string    `json:"operationType" `
 	Amount        int64     `json:"amount"`
 }
 
