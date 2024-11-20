@@ -6,6 +6,7 @@ import (
 	"errors"
 	"sync"
 	"time"
+	"wallet/internal/model"
 
 	"github.com/google/uuid"
 )

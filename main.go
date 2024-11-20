@@ -4,10 +4,9 @@ import (
 	"log"
 	"net/http"
 	"os"
-
-	"wallet-service/internal/handler"
-	"wallet-service/internal/repository"
-	"wallet-service/internal/service"
+	"wallet/internal/handler"
+	"wallet/internal/repository"
+	"wallet/internal/service"
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"

@@ -3,8 +3,7 @@ package service
 import (
 	"context"
 	"errors"
-
-	"wallet-service/internal/repository"
+	"wallet/internal/repository"
 
 	"github.com/google/uuid"
 )
