@@ -57,6 +57,9 @@ docker-compose down
 ---
 
 ## Команды REST API
+В качестве примера в таблице SQL проекта используется следующее walletId:19623ea0-ea8a-4b57-8303-1d81468a8f9d
+
+Также в кошельке уже имеется amount = 500.
 
 ### 1. **Пополнение кошелька**
 **POST** `/api/v1/wallet`
@@ -64,7 +67,7 @@ docker-compose down
 **Пример запроса**:
 ```json
 {
-    "walletId": "e7c8fc12-8f57-45a3-9e8f-fb6e2846ae28",
+    "walletId": "19623ea0-ea8a-4b57-8303-1d81468a8f9d",
     "operationType": "DEPOSIT",
     "amount": 1000
 }
@@ -83,7 +86,7 @@ docker-compose down
 **Пример запроса**:
 ```json
 {
-    "walletId": "e7c8fc12-8f57-45a3-9e8f-fb6e2846ae28",
+    "walletId": "19623ea0-ea8a-4b57-8303-1d81468a8f9d",
     "operationType": "WITHDRAW",
     "amount": 500
 }
@@ -101,7 +104,7 @@ docker-compose down
 
 **Пример запроса**:
 ```bash
-GET /api/v1/wallets/e7c8fc12-8f57-45a3-9e8f-fb6e2846ae28
+GET /api/v1/wallets/19623ea0-ea8a-4b57-8303-1d81468a8f9d
 ```
 
 **Пример ответа**:
